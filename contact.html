@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;600;700&family=Public+Sans:wght@100;300&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/footer.css">
   <title>Frontend Mentor | Minimalist Portfolio</title>
 </head>
@@ -24,7 +24,7 @@
 
     <ul class="links">
       <li>
-        <a href="./index.html">
+        <a href="index.html">
           Home
         </a>
       </li>
@@ -48,64 +48,65 @@
 
   </div> <!-- end of nav-container -->
 
-  <div class="hero container">
+ <div class="get-in-touch container">
 
-    <div class="main-img-container">
-      <img src="./images/homepage/mobile/image-homepage-hero.jpg" alt="">
-    </div> <!-- end of main-img-container -->
+  <h2>
+    Get in Touch
+  </h2>
 
-    <div class="main-text-container">
+  <p>
+    I’d love to hear about what you’re working on and how I could help. I’m currently 
+    looking for a new role and am open to a wide range of opportunities. My preference 
+    would be to find a position in a company in Bratislava. But I’m also happy to hear about 
+    opportunites that don’t fit that description. I’m a hard-working and positive person 
+    who will always approach each task with a sense of purpose and attention to detail. 
+    Please do feel free to check out my online profiles below and get in touch using the form.  
+  </p>
 
-      <h1>
-        Hey, I’m Martin Ondráš and I love building beautiful websites
-      </h1>
+  <div class="get-in-touch-social-container">
 
-      <div class="main-btn-container">
-        <div class="icon"></div>
-        <a href="./index.html" class="main-btn">About Me</a>
-      </div>
+    <a href="#">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="#">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="#">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div> <!-- end of get-in-touch-social-container -->
 
-    </div> <!-- end of main-text-container -->
+ </div> <!-- end of get-in-touch container-->
 
-  </div> <!-- end of hero-container -->
+ <div class="contact-form container">
 
-  <div class="about-me container">
+  <form id="form" class="form">
 
-    <div class="about-me-logo-container">
-      <img src="./images/homepage/mobile/image-homepage-profile.jpg" alt="">
-    </div> <!-- end of about-me-logo-container -->
+    <h2>Contact Me</h2>
 
-    <div class="about-me-text-container">
+    <div class="form-control">
+      <label for="username">Name</label>
+      <input type="text" id="username" placeholder="Martin Ondras" />
+      <small>Error message</small>
+    </div>
 
-      <h2>
-        About me
-      </h2>
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="email@example.com" />
+      <small>Error message</small>
+    </div>
 
-      <p>
-        I’m a junior front-end developer looking for a new role in an exciting company. 
-        I focus on writing accessible HTML, using modern CSS practices and writing clean 
-        JavaScript. When writing JavaScript code, I mostly use vanilla Javascript, but I can adapt to 
-        whatever tools are required. I’m based in Bratislava, SK, but I’m happy working remotely 
-        and have experience in remote teams. When I’m not coding, you’ll find me outdoors. 
-        I love being out in nature whether that’s going for a walk, run or cycling. I’d love 
-        you to check out my work.
-      </p>
+    <div class="form-control">
+      <label for="message">Message</label>
+      <input type="textarea" id="message" placeholder="How can I help?" />
+      <small>Error message</small>
+    </div>
 
-      <a href="./portfolio.html" class="btn">Go to Portfolio</a>
+    <button type="submit">Send Message</button>
 
-    </div> <!-- end of about-me-text-container -->
+  </form>
 
-  </div> <!-- end of about-me-container -->
-
-  <div class="contact-me container">
-
-    <h2>
-      Interested in doing a project together?
-    </h2>
-
-    <a href="./contact.html" class="btn">Contact Me</a>
-
-  </div> <!-- end of contact-me-container -->
+ </div> <!-- end of contact-form container-->
 
   <footer>
     <div class="footer container">
