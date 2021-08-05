@@ -8,6 +8,7 @@
   --titles_font: "Ibarra Real Nova", serif;
   --text_font: "Public Sans", sans-serif;
   --black: #33323d;
+  --active: #5fb4a2;
   --main-btn-bg: #203a4c;
   --main-btn-icon-bg: #1c3445;
 }
@@ -56,10 +57,31 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
+  transition: color 0.3s ease-in-out;
+}
+
+.links a:hover {
+  color: var(--active);
+}
+
+a.active {
+  color: var(--active) !important;
 }
 
 footer a {
   color: white;
+}
+
+footer a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.img-tablet {
+  display: none;
+}
+
+.img-desktop {
+  display: none;
 }
 
 img:not(.logo) {
@@ -97,7 +119,6 @@ img.logo {
 .main-btn-container {
   width: 200px;
   display: flex;
-  margin-bottom: 6rem;
 }
 
 .main-btn-container:hover .main-btn {
@@ -126,6 +147,6 @@ img.logo {
 
 .container {
   width: 83%;
-  max-width: 375px;
+  max-width: 736px;
   margin: 0 auto;
 }

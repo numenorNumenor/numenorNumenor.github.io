@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/faviconInsure-32x32.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/project.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <title>Frontend Mentor | Minimalist Portfolio</title>
 </head>
 <body>
@@ -29,7 +30,7 @@
         </a>
       </li>
       <li>
-        <a href="./portfolio.html">
+        <a class="active" href="./portfolio.html">
           Portfolio
         </a>
       </li>
@@ -51,7 +52,9 @@
   <div class="container">
 
     <div class="project-preview-img">
-      <img src="./images/detail/mobile/image-insure-preview-1.jpg" alt="">
+      <img class="img-mobile" src="./images/detail/mobile/image-insure-preview-1.jpg" alt="">
+      <img class="img-tablet" src="./images/detail/tablet/image-insure-preview-1@2x.jpg" alt="">
+      <img class="img-desktop" src="./images/detail/desktop/image-insure-preview-1@2x.jpg" alt="">
     </div> <!-- end of project-preview-img-->
 
     <div class="project-about">
@@ -72,7 +75,7 @@
         HTML / CSS / JS
       </p>
 
-      <a href="#" class="btn">VISIT WEBSITE</a>
+      <a target="_blank" href="./projectInsure.html" class="btn">VISIT WEBSITE</a>
 
     </div>  <!-- end of project-about -->
 
@@ -100,11 +103,15 @@
       </h3>
 
       <div class="preview-head">
-        <img src="./images/detail/mobile/image-insure-preview-1@2x.jpg" alt="">
+        <img class="img-mobile" src="./images/detail/mobile/image-insure-preview-1@2x.jpg" alt="">
+        <img class="img-tablet" src="./images/detail/tablet/image-insure-preview-1@2x.jpg" alt="">
+        <img class="img-desktop" src="./images/detail/desktop/image-insure-preview-1@2x.jpg" alt="">
       </div> <!-- end of preview-head-->
 
       <div class="preview-body">
-        <img src="./images/detail/mobile/image-insure-preview-2@2x.jpg" alt="">
+        <img class="img-mobile" src="./images/detail/mobile/image-insure-preview-2@2x.jpg" alt="">
+        <img class="img-tablet" src="./images/detail/tablet/image-insure-preview-2@2x.jpg" alt="">
+        <img class="img-desktop" src="./images/detail/desktop/image-insure-preview-2@2x.jpg" alt="">
       </div> <!-- end of preview-body-->
 
     </div> <!-- end of static-preview-->
@@ -148,7 +155,7 @@
     <h2>
       Interested in doing a project together?
     </h2>
-
+    <div class="contact-me-line"></div>
     <a href="./contact.html" class="btn">Contact Me</a>
 
   </div> <!-- end of contact-me-container -->
@@ -170,13 +177,13 @@
         </li>
       </ul> <!-- end of footer-links-container -->
       <div class="footer-social-container">
-        <a href="#">
+        <a target="_blank" href="https://sk-sk.facebook.com/people/Martin-Ondr%C3%A1%C5%A1/100004525096991/">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="#">
+        <a target="_blank" href="https://sk-sk.facebook.com/people/Martin-Ondr%C3%A1%C5%A1/100004525096991/">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="#">
+        <a target="_blank" href="https://sk-sk.facebook.com/people/Martin-Ondr%C3%A1%C5%A1/100004525096991/">
           <i class="fab fa-instagram"></i>
         </a>
       </div> <!-- end of footer-social-container -->
