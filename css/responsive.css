@@ -124,6 +124,7 @@
 
   .contact-me a {
     grid-column: 5/6;
+    justify-self: end;
   }
 
   .footer {
@@ -304,5 +305,37 @@
 
   .contact-me .contact-me-line {
     grid-column: 3/5;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1110px;
+  }
+
+  .preview-container {
+    display: flex;
+  }
+
+  .static-preview .preview-head {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  .static-preview .preview-body {
+    margin-bottom: 0;
+  }
+
+  .main-text-container {
+    grid-row: 4/7;
+  }
+
+  h1 {
+    max-width: 450px;
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 45px;
   }
 }

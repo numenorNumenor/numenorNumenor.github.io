@@ -1,0 +1,679 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Softred: hsl(7, 99%, 70%);
+  --Yellow: hsl(51, 100%, 49%);
+  --Green: hsl(168.1, 38.8%, 59%);
+  --Dark-desaturated-cyan: hsl(167, 40%, 24%);
+  --Dark-blue: hsl(198, 62%, 26%);
+  --Dark-moderate-cyan: hsl(168, 34%, 41%);
+  --Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+  --Very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --Dark-grayish-blue: hsl(232, 10%, 55%);
+  --Grayish-blue: hsl(210, 4%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Barlow: "Barlow", sans-serif;
+  --Fraunces: "Fraunces", sans-serif;
+}
+
+body {
+  font-family: var(--Barlow);
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--Fraunces);
+  max-width: 340px;
+  margin: 0 auto;
+  color: var(--Very-dark-desaturated-blue);
+}
+
+h1.title {
+  font-size: 2.5rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer a i,
+footer a {
+  transition: all 0.3s ease-in-out;
+}
+
+footer a:hover i {
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+footer a:hover i {
+  color: white;
+}
+
+section a {
+  position: relative;
+  font-family: var(--Fraunces);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--Very-dark-desaturated-blue);
+  transition: all 0.3s ease-in-out;
+}
+
+section:first-of-type a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -7.5px;
+  width: 140px;
+  height: 8px;
+  border-radius: 5px;
+  background: hsla(51, 100%, 49%, 20%);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+section:first-of-type a:hover::before {
+  height: 19px;
+  background: hsla(51, 100%, 49%, 100%);
+  color: white;
+}
+
+section:first-of-type a:hover {
+  color: white;
+}
+
+section:nth-of-type(2) a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -7.5px;
+  width: 140px;
+  height: 8px;
+  border-radius: 5px;
+  background: hsla(7, 99%, 70%, 20%);
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+section:nth-of-type(2) a:hover::before {
+  height: 19px;
+  background: hsla(7, 99%, 70%, 100%);
+  color: white;
+}
+
+section:nth-of-type(2) a:hover {
+  color: white;
+}
+
+p {
+  max-width: 300px;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  margin: 0 auto;
+  color: var(--Dark-grayish-blue);
+}
+
+li {
+  list-style-type: none;
+}
+
+section img {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 88%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.links {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  bottom: -220px;
+  width: 100%;
+  background: white;
+}
+
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+.hamburger .line:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger .line:last-of-type {
+  bottom: 0;
+}
+
+section .text-container {
+  padding: 4rem 0;
+}
+
+section.design > div {
+  padding: 4rem 0;
+}
+
+.testimonials {
+  padding-top: 4rem;
+}
+
+.testimonials-container {
+  padding: 4rem 0;
+}
+
+footer {
+  padding: 4rem 0;
+}
+
+/**HEADER**/
+
+header {
+  background-image: url("./sunny/mobile/image-header.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0 4rem 0;
+}
+
+nav.open .links {
+  visibility: visible;
+  display: block;
+  position: absolute;
+  bottom: -220px;
+  width: 100%;
+  background: white;
+  opacity: 1;
+}
+
+.links::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 25px solid white;
+}
+
+.links a {
+  display: block;
+  width: 100%;
+  margin: 1.5em 0;
+  color: var(--Grayish-blue);
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.links a:hover {
+  color: var(--Very-dark-desaturated-blue);
+}
+
+.links a:first-child {
+  margin-top: 2rem;
+}
+
+.links a:last-child {
+  background: var(--Yellow);
+  max-width: 150px;
+  font-size: 0.9rem;
+  padding: 0.7rem 0;
+  border-radius: 30px;
+  margin: 1.5rem auto 2rem auto;
+  color: var(--Very-dark-desaturated-blue);
+  font-family: var(--Fraunces);
+  text-transform: uppercase;
+}
+
+.links a:last-child:hover {
+  background: var(--Very-dark-desaturated-blue);
+  color: white;
+}
+
+nav .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+section:first-of-type {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+section:first-of-type p {
+  margin-bottom: 2rem;
+}
+
+section:nth-of-type(2) {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+section:nth-of-type(2) p {
+  margin-bottom: 2rem;
+}
+
+section:nth-of-type(3) h3 {
+  font-size: 2rem;
+}
+
+section.design > div:first-of-type h3 {
+  margin-bottom: 1.5rem;
+}
+
+section.design > div:last-of-type h3 {
+  margin-bottom: 1.5rem;
+}
+
+section.design > div:first-of-type p {
+  font-size: 0.95rem;
+}
+
+section.design > div:last-of-type p {
+  font-size: 0.95rem;
+}
+
+section.design > div:first-of-type h3 {
+  margin-bottom: 1.5rem;
+}
+
+section.design > div:first-of-type h3,
+section.design > div:first-of-type p {
+  color: var(--Dark-desaturated-cyan);
+}
+
+section.design > div:last-of-type h3,
+section.design > div:last-of-type p {
+  color: var(--Dark-blue);
+}
+
+section.design > div:first-of-type {
+  width: 100%;
+  background-image: url("./sunny/mobile/image-graphic-design.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+section.design > div:last-of-type {
+  width: 100%;
+  background-image: url("./sunny/mobile/image-photography.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.testimonials-container {
+  display: grid;
+  row-gap: 4rem;
+}
+
+.desgin h3 {
+  font-size: 3rem;
+}
+
+section:nth-of-type(4) h3 {
+  font-size: 1rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--Grayish-blue);
+}
+
+.testimonial img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.testimonial p {
+  margin-bottom: 2rem;
+  color: var(--Dark-blue);
+}
+
+.testimonial h5 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial small {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+section.carousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+footer {
+  background: var(--Green);
+}
+
+footer a {
+  color: var(--Dark-desaturated-cyan);
+}
+
+footer .footer-logo {
+  margin-bottom: 2rem;
+}
+
+footer .footer-logo .logo-f {
+  width: 100%;
+  max-width: 160px;
+}
+
+footer .social-media a {
+  font-size: 1.4rem;
+  margin-right: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  font-size: 1rem;
+}
+
+footer .social-media a:last-of-type {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 445px) {
+  section.design > div:first-of-type {
+    background-position: center top -50px;
+  }
+
+  section.design > div:last-of-type {
+    background-position: center top -50px;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  section.design > div:first-of-type {
+    background-position: center top -100px;
+  }
+
+  section.design > div:last-of-type {
+    background-position: center top -100px;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  section.design > div:first-of-type {
+    background-position: center top -120px;
+  }
+
+  section.design > div:last-of-type {
+    background-position: center top -120px;
+  }
+}
+
+@media screen and (min-width: 568px) {
+  section.design > div:first-of-type {
+    width: 100%;
+    background-position: center top;
+    justify-content: start;
+    padding: 390px 1rem 0 1rem;
+  }
+
+  section.design > div:last-of-type {
+    width: 100%;
+    background-position: center top;
+    justify-content: start;
+    padding: 390px 1rem 0 1rem;
+  }
+  section.design {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1.title {
+    max-width: 100%;
+  }
+  header {
+    background-image: url("./sunny/desktop/image-header.jpg");
+  }
+
+  section:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section:first-of-type img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section:first-of-type .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+  }
+
+  section:first-of-type .text-container h2 {
+    margin: 0 0 1.5rem 0;
+  }
+
+  section:first-of-type .text-container p {
+    margin: 0 0 1.5rem 0;
+  }
+  section:first-of-type .text-container .inner-container {
+    max-width: 300px;
+  }
+
+  section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section:nth-of-type(2) img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section:nth-of-type(2) .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+  }
+
+  section:nth-of-type(2) .img-container {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+
+  section:nth-of-type(2) .text-container h2 {
+    margin: 0 0 1.5rem 0;
+  }
+
+  section:nth-of-type(2) .text-container p {
+    margin: 0 0 1.5rem 0;
+  }
+  section:nth-of-type(2) .text-container .inner-container {
+    max-width: 300px;
+  }
+
+  section.carousel {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+
+  nav.open .links {
+    visibility: visible;
+    display: flex;
+    position: static;
+    bottom: 0px;
+    width: 500px;
+    background: transparent;
+    opacity: 1;
+  }
+
+  nav .links {
+    visibility: visible;
+    display: flex;
+    position: static;
+    bottom: 0px;
+    width: 500px;
+    background: transparent;
+    opacity: 1;
+  }
+
+  nav {
+    padding: 3rem 0 8rem 0;
+  }
+
+  .links a {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 0;
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .links a:hover {
+    color: var(--Very-dark-desaturated-blue);
+  }
+
+  .links a:first-child {
+    margin-top: 0rem;
+  }
+
+  .links a:last-child {
+    background: var(--Yellow);
+    max-width: 150px;
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+    border-radius: 30px;
+    margin: 0 auto 0 auto;
+    color: var(--Very-dark-desaturated-blue);
+    font-family: var(--Fraunces);
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+  }
+
+  section.design > div:first-of-type {
+    background-image: url("./sunny/desktop/image-graphic-design.jpg");
+  }
+
+  section.design > div:last-of-type {
+    background-image: url("./sunny/desktop/image-photography.jpg");
+  }
+
+  .testimonials {
+    padding-top: 8rem;
+  }
+
+  .testimonials-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 4rem 2rem 8rem 2rem;
+  }
+
+  section:first-of-type .text-container .inner-container,
+  section:nth-of-type(2) .text-container .inner-container {
+    max-width: 400px;
+  }
+
+  h2 {
+    max-width: 400px;
+  }
+
+  p {
+    max-width: 400px;
+  }
+
+  .testimonial {
+    display: grid;
+  }
+
+  .testimonial img {
+    justify-self: center;
+  }
+
+  .testimonial p {
+    align-self: stretch;
+    height: 100px;
+  }
+
+  .testimonial div:last-child {
+    align-self: end;
+  }
+}
