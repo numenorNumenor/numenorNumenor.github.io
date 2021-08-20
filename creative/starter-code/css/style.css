@@ -192,7 +192,7 @@ img:not(.logo) {
 
 .open .hamburger .line:nth-of-type(2) {
   top: 50%;
-  visibility: hidden;
+  display: none;
 }
 
 .open .hamburger .line:last-of-type {
