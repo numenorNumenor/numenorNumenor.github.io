@@ -150,6 +150,7 @@ img:not(.logo) {
 }
 
 .nav-inner-container {
+  position: relative;
   justify-content: space-between;
   align-items: center;
   height: 11rem;
@@ -198,6 +199,45 @@ img:not(.logo) {
 .open .hamburger .line:last-of-type {
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
+}
+
+.open .nav-links {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 11rem;
+  text-align: center;
+  display: block;
+  background-color: var(--black-bg);
+}
+
+.open .nav-links li {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.open .nav-links li:first-of-type {
+  padding-top: 3rem;
+}
+
+.open .nav-links li:last-of-type {
+  padding-bottom: 3rem;
+}
+
+.open .nav-links li a {
+  color: var(--white);
+}
+
+.open .nav-links li:last-of-type a {
+  display: block;
+  width: 19.9rem;
+  height: 6.4rem;
+  line-height: 6.2rem;
+  text-align: center;
+  font-weight: bolder;
+  color: var(--white);
+  background-color: var(--primary_color);
+  margin: 0 auto;
 }
 
 /**HERO**/
