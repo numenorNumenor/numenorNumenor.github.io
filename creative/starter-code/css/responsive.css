@@ -58,7 +58,7 @@
   .open .nav-links li:last-of-type a {
     width: 14.7rem;
     text-align: center;
-    background: var(--black);
+    background: var(--black-bg);
     font-weight: bold;
   }
 
