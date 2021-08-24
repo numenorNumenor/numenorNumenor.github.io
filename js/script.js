@@ -1,83 +1,121 @@
-const nav = document.querySelector(".nav");
-const links = nav.querySelector(".links");
+//hamburger menu consts
+const navigation = document.querySelector(".nav-inner-container");
+const hamburger = document.querySelector(".hamburger");
+//slider consts
+const prev = document.querySelector(".previous");
+const next = document.querySelector(".next");
+//slider tablet or higher
+const projectName = document.querySelector(".preview-name");
+const projectDesc = document.querySelector(".preview-desc");
+const projectPreview = document.querySelectorAll(".img");
+//slider mobile
+const projectSmallName = document.querySelector(".preview-small-name");
+const projectSmallDesc = document.querySelector(".preview-small-desc");
+const projectSmallPreview = document.querySelectorAll(".preview-small-img");
+//paralax
+const parallaxItem = document.querySelector(".floating-text");
 
-const form = document.getElementById("form");
-const username = document.getElementById("username");
-const email = document.getElementById("email");
-const message = document.getElementById("message");
+const smallProjects = [
+  {
+    name: "Lead Product Roadmap",
+    year: "2019 Project",
+    image: "./assets/mobile/image-slide-1.jpg",
+  },
+  {
+    name: "New Majestic Hotel",
+    year: "2018 Project",
+    image: "./assets/mobile/image-slide-2.jpg",
+  },
+  {
+    name: "Crypto Dashboard",
+    year: "2016 Project",
+    image: "./assets/mobile/image-slide-3.jpg",
+  },
+];
 
-console.log(form, username, email, message);
+const projects = [
+  {
+    name: "Lead Product Roadmap",
+    year: "2019 Project",
+    image: "./assets/tablet/image-slide-1.jpg",
+    imageDesktop: "./assets/desktop/image-slide-1.jpg",
+  },
+  {
+    name: "New Majestic Hotel",
+    year: "2018 Project",
+    image: "./assets/tablet/image-slide-2.jpg",
+    imageDesktop: "./assets/desktop/image-slide-2.jpg",
+  },
+  {
+    name: "Crypto Dashboard",
+    year: "2016 Project",
+    image: "./assets/tablet/image-slide-3.jpg",
+    imageDesktop: "./assets/desktop/image-slide-3.jpg",
+  },
+];
 
-// BURGER MENU
-nav.addEventListener("click", function () {
-  nav.classList.toggle("open");
+let index = 0;
+
+// PARALAX
+
+function parallax(element, distance, speed) {
+  const item = element;
+  item.style.transform = `translateY(${distance * speed})`;
+}
+
+// HAMBURGER menu, class toggle
+
+hamburger.addEventListener("click", function () {
+  navigation.classList.toggle("open");
 });
 
-// CONTACT FORM
-// Show input error message
-function showError(input, message) {
-  const formControl = input.parentElement;
-  formControl.className = "form-control error";
-  const small = formControl.querySelector("small");
-  small.innerText = message;
-}
-
-// Show success outline
-function showSuccess(input) {
-  const formControl = input.parentElement;
-  formControl.className = "form-control success";
-}
-
-// Check email is valid
-function checkEmail(input) {
-  const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (re.test(input.value.trim())) {
-    showSuccess(input);
-  } else {
-    showError(input, "Email is not valid");
+// SLIDER TABLET or HIGHER
+prev.addEventListener("click", function () {
+  index--;
+  if (index < 0) {
+    index = 2;
   }
-}
-
-// Check required fields
-function checkRequired(inputArr) {
-  inputArr.forEach(function (input) {
-    if (input.value.trim() === "") {
-      showError(input, `${getFieldName(input)} is required`);
-    } else {
-      showSuccess(input);
-    }
-  });
-}
-
-// Check input length
-function checkLength(input, min, max) {
-  if (input.value.length < min) {
-    showError(
-      input,
-      `${getFieldName(input)} must be at least ${min} characters long`
-    );
-  } else if (input.value.length > max) {
-    showError(
-      input,
-      `${getFieldName(input)} must be less than ${max} characters long`
-    );
+  //mobile
+  projectSmallName.innerText = smallProjects[index].name;
+  projectSmallDesc.innerText = smallProjects[index].year;
+  projectSmallPreview[0].src = smallProjects[index].image;
+  //tablet or higher
+  projectName.innerText = projects[index].name;
+  projectDesc.innerText = projects[index].year;
+  if (window.innerWidth < 1280) {
+    projectPreview[0].src = projects[index].image;
   } else {
-    showSuccess(input);
+    projectPreview[1].src = projects[index].imageDesktop;
   }
-}
+});
 
-// Get fieldname
-function getFieldName(input) {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
+next.addEventListener("click", function () {
+  index++;
+  if (index > 2) {
+    index = 0;
+  }
+  //mobile
+  projectSmallName.innerText = smallProjects[index].name;
+  projectSmallDesc.innerText = smallProjects[index].year;
+  projectSmallPreview[0].src = smallProjects[index].image;
+  //tablet or higher
+  projectName.innerText = projects[index].name;
+  projectDesc.innerText = projects[index].year;
+  if (window.innerWidth < 1280) {
+    projectPreview[0].src = projects[index].image;
+  } else {
+    projectPreview[1].src = projects[index].imageDesktop;
+  }
+});
 
-// Event listeners
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+window.addEventListener("scroll", function () {
+  const pageSize = document.querySelector("body").clientHeight;
+  const scrollPosition = window.scrollY;
+  const windowSize = window.innerHeight;
 
-  checkRequired([username, email, message]);
-  checkLength(username, 3, 15);
-  checkLength(message, 7, 1000);
-  checkEmail(email);
+  const currentPageSize = pageSize - windowSize;
+  const currentScrollPosition = (scrollPosition / currentPageSize) * 100;
+  if (currentScrollPosition > 38) {
+    parallaxItem.style.transform = `translateY(${parallaxItem.offsetHeight}px)`;
+  }
 });

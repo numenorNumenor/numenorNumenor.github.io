@@ -3,145 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;600;700&family=Public+Sans:wght@100;300&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="css/general.css">
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <title>Frontend Mentor | Minimalist Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;300;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <title>Martin Ondráš  / Creative</title>
 </head>
 <body>
+  <div class="nav-container">
 
-  <div class="nav container">
+    <div class="nav-inner-container container">
 
-    <div class="logo-container">
-      <img class="logo" src="./images/logo.svg" alt="">
-    </div> <!-- end of logo-container -->
+      <div class="logo-container">
+        <img class="logo" src="./assets/desktop/logo.svg" alt="creative logo">
+      </div>  <!-- end of logo-container -->
+  
+      <ul class="nav-links">
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#service">Service</a>
+        </li>
+        <li>
+          <a href="#project">Projects</a>
+        </li>
+        <li>
+          <a class="special-link" href="#call">Schedule a call</a>
+        </li>
+      </ul>  <!-- end of nav-links -->
+  
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>  <!-- end of hamburger -->
 
-    <ul class="links">
-      <li>
-        <a class="active" href="./index.html">
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="./portfolio.html">
-          Portfolio
-        </a>
-      </li>
-      <li>
-        <a href="./contact.html">
-          Contact Me
-        </a>
-      </li>
-    </ul> <!-- end of links -->
-
-    <div class="burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+    </div> <!-- end of nav-inner-container -->
 
   </div> <!-- end of nav-container -->
 
-  <div class="hero container">
+  <section id="about" class="hero-container">
 
-    <div class="main-img-container">
-      <img class="img-mobile" src="./images/homepage/mobile/image-homepage-hero.jpg" alt="">
-      <img class="img-tablet" src="./images/homepage/tablet/image-homepage-hero.jpg" alt="">
-      <img class="img-desktop" src="./images/homepage/desktop/image-homepage-hero.jpg" alt="">
-    </div> <!-- end of main-img-container -->
+    <div class="img-mobile">
+      <img src="./assets/mobile/image-hero.jpg" alt="">
+    </div> <!-- end of img-mobile -->
 
-    <div class="main-text-container">
+    <div class="text-container container">
 
-      <h1>
-        Hey, I’m Martin Ondráš and I love building beautiful websites
+      <h1 class="lead">
+        Branding & website design agency
       </h1>
 
-      <div class="main-btn-container">
-        <div class="icon"></div>
-        <a href="./index.html" class="main-btn">About Me</a>
-      </div>
-
-    </div> <!-- end of main-text-container -->
-
-  </div> <!-- end of hero-container -->
-
-  <div class="about-me container">
-
-    <div class="about-me-logo-container">
-      <img class="img-mobile" src="./images/homepage/mobile/image-homepage-profile.jpg" alt="">
-      <img class="img-tablet" src="./images/homepage/tablet/image-homepage-profile.jpg" alt="">
-      <img class="img-desktop" src="./images/homepage/desktop/image-homepage-profile.jpg" alt="">
-    </div> <!-- end of about-me-logo-container -->
-
-    <div class="about-me-text-container">
-
-      <h2>
-        About me
-      </h2>
-
-      <p>
-        I’m a junior front-end developer looking for a new role in an exciting company. 
-        I focus on writing accessible HTML, using modern CSS practices and writing clean 
-        JavaScript. When writing JavaScript code, I mostly use vanilla Javascript, but I can adapt to 
-        whatever tools are required. I’m based in Bratislava, SK, but I’m happy working remotely 
-        and have experience in remote teams. When I’m not coding, you’ll find me outdoors. 
-        I love being out in nature whether that’s going for a walk, run or cycling. I’d love 
-        you to check out my work.
+      <p class="p-lead">
+        We specialize in visual storytelling by creating cohesive brand and website design 
+        solutions for small businesses, giving lasting impressions to audiences in a digital world.
       </p>
 
-      <a href="./portfolio.html" class="btn">Go to Portfolio</a>
+      <a href="#" class="btn-primary">Learn More</a>
 
-    </div> <!-- end of about-me-text-container -->
+    </div> <!-- end of text-container -->
+  </section> <!-- end of hero-container -->
 
-  </div> <!-- end of about-me-container -->
+  <section id="service" class="design">
 
-  <div class="contact-me container">
+    <div class="img-mobile">
+      <img src="./assets/mobile/image-strategic.jpg" alt="">
+    </div> <!-- end of img-mobile -->
 
-    <h2>
-      Interested in doing a project together?
-    </h2>
-    <div class="contact-me-line"></div>
-    <a href="./contact.html" class="btn">Contact Me</a>
+    <div class="design-text-container container">
+      <div class="design-text">
 
-  </div> <!-- end of contact-me-container -->
+        <h2>
+          <span>Design</span> is strategic.
+        </h2>
+  
+        <p>
+          A well-crafted design strategy consistently produces desired outcomes and brand awareness. 
+          We are firm believers that success lies in creative collaboration with our clients.
+        </p>
+  
+        <a href="#" class="btn">Schedule a call</a>
 
-  <footer>
-    <div class="footer container">
-      <div class="footer-logo-container">
-        <img class="logo" src="./images/logo-white.svg" alt="">
-      </div> <!-- end of footer-logo-container -->
-      <ul class="footer-links-container">
-        <li>
-          <a href="./index.html">Home</a>
-        </li>
-        <li>
-          <a href="./portfolio.html">Portfolio</a>
-        </li>
-        <li>
-          <a href="./contact.html">Contact me</a>
-        </li>
-      </ul> <!-- end of footer-links-container -->
-      <div class="footer-social-container">
-        <a target="_blank" href="https://sk-sk.facebook.com/people/Martin-Ondr%C3%A1%C5%A1/100004525096991/">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a target="_blank" href="https://sk-sk.facebook.com/people/Martin-Ondr%C3%A1%C5%A1/100004525096991/">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a target="_blank" href="https://sk-sk.facebook.com/people/Martin-Ondr%C3%A1%C5%A1/100004525096991/">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div> <!-- end of footer-social-container -->
-    </div> <!-- end of footer-container -->
+      </div> <!-- end of design-text -->
+    </div> <!-- end of design-text-container -->
+
+  </section> <!-- end of design -->
+
+  <section class="approach">
+    
+    <div class="container">
+
+      <div class="approach-text-container">
+
+        <h2 class="floating-text">
+          Our approach for creating a winning brand
+        </h2>
+  
+      </div> <!-- end of approach-text-container -->
+  
+      <div class="approach-features-container">
+  
+        <div class="approach-features-inner-container">
+  
+          <div class="feature">
+            <h3>
+              Brand strategy
+            </h3>
+  
+            <p class="p-approach">
+              Brand strategy is critical for long-term success. Outshining competitors and capturing 
+              the target audience are key.
+            </p>
+          </div> <!-- end of feature -->
+  
+          <div class="feature">
+            <h3>
+              Brand design
+            </h3>
+  
+            <p class="p-approach">
+              Keeping the brand design unique and meaningful helps in communicating the brand’s timeless 
+              value effectively.
+            </p>
+          </div> <!-- end of feature -->
+  
+          <div class="feature">
+            <h3>
+              Web design
+            </h3>
+  
+            <p class="p-approach">
+              A beautifully crafted website is the best tool for brand awareness, and ultimately results 
+              in increased revenues.
+            </p>
+          </div> <!-- end of feature -->
+  
+        </div> <!-- end of approach-features-inner-container -->
+  
+      </div> <!-- end of approach-features-container -->
+  
+
+    </div> <!-- end of container -->
+    
+  </section> <!-- end of approach -->
+
+  <section id="project" class="portfolio">
+
+    <div class="img-mobile">
+
+      <img class="preview-small-img" src="./assets/mobile/image-slide-1.jpg" alt="image slide one">
+
+      <div class="container">
+        <div class="preview-details">
+          <h3 class="preview-small-name">
+            New Majestic Hotel 
+          </h3>
+          <p class="preview-small-desc">
+            2018 Project
+          </p>
+        </div> <!-- end of preview-details -->
+      </div> <!-- end of container -->
+
+    </div> <!-- end of img-mobile -->
+
+    <div class="controller">
+
+      <div class="container">
+
+        <h2>
+          Brand identity & merchandise
+        </h2>
+  
+        <div class="arrows">
+          <div class="previous"><img src="./assets/desktop/icon-arrow-previous.svg" alt=""></div>
+          <div class="next"><img src="./assets/desktop/icon-arrow-next.svg" alt=""></div>
+        </div> <!-- end of arrows -->
+
+      </div> <!-- end of container -->
+
+    </div> <!-- end of controller -->
+
+    <div class="transparent-div"></div> <!-- end of transparent-div -->
+
+    <div class="portfolio-preview-img">
+      <img class="img img-tablet" src="./assets/tablet/image-slide-1.jpg" alt="">
+      <img class="img img-desktop" src="./assets/desktop/image-slide-1.jpg" alt="">
+      <div class="preview-details">
+        <h3 class="preview-name">
+          Lead Product Roadmap
+        </h3>
+        <p class="preview-desc">
+          2019 Project
+        </p>
+      </div> <!-- end of preview-details -->
+    </div> <!-- end of portfolio-preview-img -->
+
+  </section> <!-- end of portfolio -->
+
+  <footer id="call">
+    <div class="container">
+
+      <h2>
+        Let's build something great together.
+      </h2>
+
+      <a href="#" class="btn-primary">Schedule a call</a>
+
+    </div>
   </footer>
 
-<script src="./js/script.js"></script>
+  <!--
+
+  Brand identity & merchandise
+  New Majestic Hotel 
+  2018 Project
+  
+  Brand identity & web design
+  
+  2016 Project
+
+  Let's build something great together.
+
+  Schedule a Call -->
+  <script src="./js/script.js"></script>
 </body>
 </html>
