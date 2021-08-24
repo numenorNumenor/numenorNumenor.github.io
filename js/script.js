@@ -13,7 +13,7 @@ const projectSmallName = document.querySelector(".preview-small-name");
 const projectSmallDesc = document.querySelector(".preview-small-desc");
 const projectSmallPreview = document.querySelectorAll(".preview-small-img");
 //paralax
-const parallaxItem = document.querySelector(".floating-text");
+// const parallaxItem = document.querySelector(".floating-text");
 
 const smallProjects = [
   {
@@ -58,10 +58,10 @@ let index = 0;
 
 // PARALAX
 
-function parallax(element, distance, speed) {
-  const item = element;
-  item.style.transform = `translateY(${distance * speed})`;
-}
+// function parallax(element, distance, speed) {
+//   const item = element;
+//   item.style.transform = `translateY(${distance * speed})`;
+// }
 
 // HAMBURGER menu, class toggle
 
@@ -108,14 +108,14 @@ next.addEventListener("click", function () {
   }
 });
 
-window.addEventListener("scroll", function () {
-  const pageSize = document.querySelector("body").clientHeight;
-  const scrollPosition = window.scrollY;
-  const windowSize = window.innerHeight;
+// window.addEventListener("scroll", function () {
+//   const pageSize = document.querySelector("body").clientHeight;
+//   const scrollPosition = window.scrollY;
+//   const windowSize = window.innerHeight;
 
-  const currentPageSize = pageSize - windowSize;
-  const currentScrollPosition = (scrollPosition / currentPageSize) * 100;
-  if (currentScrollPosition > 38) {
-    parallaxItem.style.transform = `translateY(${parallaxItem.offsetHeight}px)`;
-  }
-});
+//   const currentPageSize = pageSize - windowSize;
+//   const currentScrollPosition = (scrollPosition / currentPageSize) * 100;
+//   if (currentScrollPosition > 38) {
+//     parallaxItem.style.transform = `translateY(${parallaxItem.offsetHeight}px)`;
+//   }
+// });
