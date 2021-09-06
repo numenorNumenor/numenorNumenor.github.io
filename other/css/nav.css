@@ -1,0 +1,76 @@
+/**NAV**/
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: none;
+}
+
+.burger {
+  width: 24px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background: var(--black);
+  position: absolute;
+  left: 0;
+}
+
+.burger .line:first-of-type {
+  top: 0;
+}
+
+.burger .line:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger .line:nth-of-type(3) {
+  bottom: 0;
+}
+
+.open .burger .line:first-of-type {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.open .burger .line:nth-of-type(2) {
+  top: 50%;
+  visibility: hidden;
+}
+
+.open .burger .line:nth-of-type(3) {
+  transform: rotate(135deg);
+  top: 50%;
+}
+
+.open .links {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 223px;
+  height: 186px;
+  text-align: center;
+  background-color: var(--black);
+}
+
+.open .links li a {
+  color: white;
+}

@@ -1,0 +1,13 @@
+.project h2 {
+  margin-bottom: 1rem;
+}
+
+.project-img-container {
+  margin-bottom: 2rem;
+}
+
+.project-text-container {
+  border-top: 1.5px solid #e2e2e2;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

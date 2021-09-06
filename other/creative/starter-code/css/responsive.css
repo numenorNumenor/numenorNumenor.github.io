@@ -1,0 +1,479 @@
+@media screen and (min-width: 768px) {
+  /**NAVIGATION**/
+
+  .nav-container {
+    background: linear-gradient(to right, white 50%, #f94f4f 50%);
+  }
+
+  .nav-inner-container,
+  .open .nav-inner-container {
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links,
+  .open .nav-links {
+    display: flex;
+  }
+
+  .nav-links,
+  .open .nav-links {
+    position: static;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: var(--primary_color);
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .nav-links li,
+  .open .nav-links li {
+    margin-left: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .nav-links li a,
+  .open .nav-links li a {
+    display: block;
+    height: 6.4rem;
+    line-height: 6.2rem;
+  }
+
+  .open .nav-links li:first-of-type {
+    padding-top: 0rem;
+  }
+
+  .open .nav-links li:last-of-type {
+    padding-bottom: 0rem;
+  }
+
+  .nav-links li:last-of-type a,
+  .open .nav-links li:last-of-type a {
+    width: 14.7rem;
+    text-align: center;
+    background: var(--black-bg);
+    font-weight: bold;
+  }
+
+  /**HERO**/
+
+  h1 {
+    font-size: 5.6rem;
+    line-height: 5.6rem;
+  }
+
+  h1,
+  .p-lead {
+    max-width: 40rem;
+  }
+
+  .hero-container {
+    background-image: url("../assets/tablet/image-hero.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+
+  .img-mobile {
+    display: none !important;
+  }
+
+  .text-container {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  /**DESIGN**/
+
+  .design {
+    background-image: url("../assets/tablet/image-strategic.jpg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: left;
+  }
+
+  .design h2 {
+    max-width: 15rem;
+  }
+
+  .design p {
+    max-width: 28rem;
+  }
+
+  .design-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding-left: 40rem;
+    padding-top: 10rem;
+    padding-bottom: 17rem;
+  }
+
+  .design-text::before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    left: -9.15rem;
+    width: 6.3rem;
+    height: 2.9rem;
+  }
+
+  /**APPROACH**/
+
+  .approach {
+    position: relative;
+    background: linear-gradient(to right, white 50%, #f94f4f 50%);
+  }
+
+  .approach::before {
+    position: absolute;
+    content: "";
+    top: -6rem;
+    right: 0;
+    width: calc(50% + 6rem);
+    height: 6rem;
+    background-color: var(--primary_color);
+  }
+
+  .approach::after {
+    position: absolute;
+    content: "";
+    top: 0rem;
+    right: 50%;
+    width: 6rem;
+    height: 100%;
+    background-color: var(--primary_color);
+  }
+
+  .approach h3 {
+    position: relative;
+  }
+
+  .approach h3,
+  .approach p {
+    max-width: 40rem;
+  }
+
+  .approach h2 {
+    color: var(--black);
+    max-width: 27.9rem;
+  }
+
+  .approach .container {
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .approach .container > div:last-of-type {
+    width: 50%;
+  }
+
+  .approach-features-container {
+    background-color: var(--primary_color);
+  }
+
+  .approach-features-inner-container {
+    padding-top: 10rem;
+    padding-bottom: 14rem;
+    padding-left: 6rem;
+  }
+
+  .approach-text-container {
+    width: calc(50% - 6rem);
+    padding-top: 10rem;
+    background-color: var(--white);
+  }
+
+  /**PORTFOLIO**/
+
+  .portfolio {
+    position: relative;
+    z-index: 9999;
+  }
+
+  .portfolio::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(50% - 6rem);
+    width: 6rem;
+    height: calc(100% - 12rem);
+    background-color: #191921;
+    z-index: 9999;
+  }
+
+  .portfolio-preview-img {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(50% + 6rem);
+    height: 100%;
+    z-index: 10;
+  }
+
+  .portfolio-preview-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .transparent-div {
+    width: 50%;
+    height: 12rem;
+    background-color: white;
+    z-index: 1;
+  }
+
+  .preview-details {
+    position: absolute;
+    bottom: 3rem;
+    right: 6rem;
+  }
+
+  .controller {
+    position: relative;
+  }
+
+  .controller::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6.3rem;
+    height: 2.9rem;
+    background-image: url("../assets/desktop/bg-pattern-wavy-white.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 99999;
+    transform: translateX(-3.15rem) translateY(-4.5rem);
+  }
+
+  /**FOOTER**/
+
+  footer {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer h2 {
+    margin-bottom: 0;
+    max-width: 40rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-container {
+    max-width: 50%;
+  }
+
+  .nav-links {
+    border-left: 1px solid var(--primary_color);
+  }
+
+  .nav-links li {
+    margin-left: 4rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 6.6rem;
+    line-height: 6.6rem;
+    max-width: 50rem;
+    margin-bottom: 5rem;
+  }
+
+  h2 {
+    font-size: 4.2rem;
+    line-height: 5rem;
+  }
+
+  .img-tablet {
+    display: none;
+  }
+
+  .img-desktop {
+    display: block;
+  }
+
+  .design {
+    background-image: url("../assets/desktop/image-strategic.jpg");
+  }
+
+  .design h2 {
+    max-width: 20rem;
+  }
+
+  .approach h2 {
+    max-width: 36rem;
+  }
+
+  .controller h2 {
+    max-width: 37rem;
+  }
+
+  footer h2 {
+    max-width: 52rem;
+  }
+
+  p.p-lead {
+    margin-bottom: 5rem;
+  }
+
+  p {
+    line-height: 3.2rem;
+  }
+
+  .hero-container {
+    background-image: url("../assets/desktop/image-hero.jpg");
+  }
+
+  .design-text-container {
+    padding-left: 52rem;
+  }
+
+  .design-text::before {
+    left: -15.15rem;
+  }
+
+  .controller {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .controller::before {
+    transform: translateX(-3.15rem) translateY(-6.5rem);
+  }
+
+  .approach-features-inner-container {
+    padding-left: 12rem;
+  }
+
+  footer {
+    position: relative;
+  }
+
+  footer::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 13.4rem;
+    height: 6rem;
+    background-image: url("../assets/desktop/bg-pattern-wave-red.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (min-width: 1366px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 7.6rem;
+    line-height: 7.6rem;
+    max-width: 55rem;
+  }
+
+  h2 {
+    font-size: 5.2rem;
+    line-height: 6rem;
+  }
+
+  .text-container {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+
+  .design h2 {
+    max-width: 23rem;
+  }
+
+  .design-text-container {
+    padding-top: 15rem;
+    padding-bottom: 27rem;
+  }
+
+  .approach h2 {
+    position: relative;
+    max-width: 44rem;
+    z-index: 99999;
+  }
+
+  .approach-features-inner-container {
+    padding-left: 18rem;
+    padding-bottom: 19rem;
+  }
+
+  .approach::after {
+    width: 19.5rem;
+  }
+
+  .approach::before {
+    height: 11rem;
+    top: -11rem;
+    width: calc(50% + 19.5rem);
+  }
+
+  .approach-text-container {
+    padding-top: 15rem;
+  }
+
+  .controller {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+
+  .design-text p {
+    max-width: 36rem;
+  }
+
+  .design-text-container {
+    padding-left: 60rem;
+  }
+}
+
+@media screen and (min-width: 1620px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (min-width: 2048px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media screen and (min-width: 2432px) {
+  html {
+    font-size: 90%;
+  }
+}

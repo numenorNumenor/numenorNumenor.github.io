@@ -1,0 +1,594 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Moderate-cyan: hsl(176, 50%, 47%);
+  --Dark-cyan: hsl(176, 72%, 28%);
+  --Black: hsl(0, 0%, 0%);
+  --Dark-gray: hsl(0, 0%, 48%);
+}
+
+body {
+  position: relative;
+  font-family: "Commissioner", sans-serif;
+  background: #f7f7f7;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.4rem;
+}
+
+.select.out {
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  cursor: default;
+}
+
+.container {
+  width: 100%;
+  height: 300px;
+
+  background-image: url("./crowd/image-hero-mobile.jpg");
+  background-size: cover;
+}
+
+nav {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+nav .desktop-links {
+  display: none;
+}
+
+nav .burger {
+  cursor: pointer;
+}
+
+nav .burger-links a {
+  display: block;
+  width: 100%;
+  line-height: 50px;
+  text-decoration: none;
+  color: var(--Black);
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+nav .burger-links a:last-child {
+  border-bottom: none;
+}
+
+nav.closed .burger-links {
+  display: none;
+}
+
+nav .burger-links {
+  background: white;
+  width: 100%;
+  max-width: 87%;
+  position: absolute;
+  bottom: -170px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.content-wrapper {
+  transform: translateY(-50px);
+  padding: 0 1.5rem;
+}
+
+section.about-product,
+section.stats,
+main.project {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto 1.5rem auto;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid rgba(67, 67, 67, 0.1);
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-bottom: 1.5rem;
+}
+/***********START OF ***********/
+/***********SECTION ABOUT-PRODUCT***********/
+
+section.about-product {
+  position: relative;
+}
+
+section.about-product .logo-master {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section.about-product .logo-master img {
+  width: 100%;
+  height: 100%;
+}
+
+section.about-product .text-content {
+  margin-bottom: 3rem;
+}
+
+section.about-product .text-content h1 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons .back-this {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  color: white;
+  background: var(--Moderate-cyan);
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+}
+
+.buttons .bookmark {
+  font-weight: 700;
+  display: flex;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.buttons .bookmark:hover circle {
+  fill: var(--Moderate-cyan);
+}
+
+.buttons .bookmark:hover path {
+  fill: white;
+}
+
+.buttons .bookmark:hover::after {
+  color: var(--Moderate-cyan);
+}
+
+.buttons .bookmark.booked circle {
+  fill: var(--Moderate-cyan);
+}
+.buttons .bookmark.booked path {
+  fill: white;
+}
+.buttons .bookmark.booked::after {
+  color: var(--Moderate-cyan);
+}
+/***********END OF ***********/
+/***********SECTION ABOUT-PRODUCT***********/
+
+/***********START OF ***********/
+/***********SECTION STATS***********/
+
+section.stats h2 {
+  font-size: 2rem;
+}
+
+section.stats .small {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.85rem;
+  line-height: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+section.stats .stats-container > div {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+section.stats .stats-container > div::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+  background: rgba(67, 67, 67, 0.1);
+}
+
+section.stats .stats-container .total-days-left::after {
+  display: none;
+}
+
+section.stats .total-days-left .small {
+  border-bottom: none;
+}
+
+.progress-bar {
+  position: relative;
+  background: rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  height: 13px;
+  border-radius: 5px;
+}
+
+.progress {
+  background: var(--Moderate-cyan);
+  width: 60%;
+  height: 13px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+}
+
+/***********END OF ***********/
+/***********SECTION STATS***********/
+
+/***********START OF ***********/
+/***********MAIN PROJECT***********/
+
+main.project {
+  text-align: left;
+}
+
+main.project .about-project h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+main.project .about-project p {
+  margin-bottom: 1.5rem;
+}
+
+/***********END OF ***********/
+/***********MAIN PROJECT***********/
+
+/***********START OF ***********/
+/***********PLEDGE***********/
+.pledge {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.pledge h3.name {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.pledge-price {
+  color: var(--Moderate-cyan);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.desc {
+  margin-bottom: 1.5rem;
+}
+
+.call-to-action h2 #left-mahogany-stand,
+.call-to-action h2 #left-bamboo-stand,
+.call-to-action h2 #left-black-stand {
+  font-weight: 700;
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.call-to-action .left {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+
+.call-to-action a {
+  color: white;
+  background: var(--Moderate-cyan);
+  padding: 0.8rem 1.5rem 0.9rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+}
+
+.out-of-stock {
+  opacity: 0.5;
+}
+
+/***********END OF ***********/
+/***********PLEDGE***********/
+
+/***********START OF ***********/
+/***********MODAL***********/
+
+.modal {
+  position: absolute;
+  width: 90%;
+  max-width: 600px;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 3.5rem 2rem 2rem 2rem;
+  border-radius: 5px;
+  outline: 9999px solid rgba(0, 0, 0, 0.5);
+}
+
+.modal.close {
+  display: none;
+}
+
+.modal-inner {
+  position: relative;
+}
+
+.modal-inner .close {
+  cursor: pointer;
+  position: absolute;
+  top: -40px;
+  right: -15px;
+}
+
+.modal-h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-p {
+  margin-bottom: 1.5rem;
+}
+
+.modal-pledge {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.modal-pledge:nth-child(1) .custom-pledge {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-pledge:nth-child(1) .custom-pledge .enter-pledge,
+.modal-pledge:nth-child(1) .custom-pledge .continue-btn {
+  align-self: center;
+}
+
+.modal-pledge-head {
+  margin-bottom: 1rem;
+}
+
+.modal-pledge-head input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.modal-pledge-head h3 {
+  font-size: 0.9rem;
+}
+
+.modal-pledge-desc {
+  margin-bottom: 1rem;
+}
+
+.modal .left {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.modal .right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .right .value {
+  color: var(--Moderate-cyan);
+}
+
+.modal-pledge-head span {
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.modal-pledge-head .bamboo-left {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin-right: 5px;
+}
+
+.modal-pledge-head .black-left {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin-right: 5px;
+}
+
+.enter-pledge {
+  margin-bottom: 1rem;
+}
+
+.pledge-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pledge-buttons input,
+.pledge-buttons a {
+  align-self: center;
+}
+
+.pledge-buttons input {
+  max-width: 75px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.continue-btn {
+  background: var(--Moderate-cyan);
+  padding: 0.5rem 1rem 0.6rem 1rem;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/***********END OF ***********/
+/***********MODAL***********/
+
+@media (min-width: 768px) {
+  .buttons .bookmark {
+    position: relative;
+    width: 200px;
+    height: 56px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+  }
+
+  .buttons .bookmark::after {
+    content: "Bookmark";
+    position: absolute;
+    padding-left: 20px;
+    border-radius: 30px;
+    line-height: 56px;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 56px;
+  }
+
+  .burger-container {
+    display: none;
+  }
+
+  nav .desktop-links {
+    display: block;
+  }
+
+  nav .desktop-links a {
+    color: white;
+    margin-left: 1.5rem;
+  }
+
+  .container {
+    background-image: url("./crowd/image-hero-desktop.jpg");
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    width: 100%;
+    max-width: 960px;
+  }
+  .container {
+    height: 400px;
+  }
+
+  .call-to-action h2#left {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    width: 100%;
+    max-width: 960px;
+  }
+  .container {
+    height: 400px;
+  }
+
+  section.about-product .text-content h1 {
+    font-size: 2em;
+  }
+
+  section.stats .stats-container {
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  section.stats .stats-container > div {
+    position: relative;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+  }
+
+  section.stats .stats-container > div::after {
+    display: none;
+  }
+
+  section.stats .stats-container > div::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 50px;
+    background: rgba(67, 67, 67, 0.1);
+  }
+
+  section.stats .stats-container .total-backers,
+  section.stats .stats-container .total-money {
+    padding-right: 5rem;
+  }
+
+  section.stats .stats-container .total-days-left::before {
+    display: none;
+  }
+
+  main.project .about-project h3 {
+    font-size: 1.4rem;
+  }
+
+  .pledge {
+    padding: 1.5rem;
+  }
+
+  .pledge h3.name {
+    font-size: 1.2rem;
+  }
+
+  .pledge .info,
+  .pledge .call-to-action {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pledge .call-to-action .select,
+  .pledge .call-to-action .left {
+    align-self: center;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1366px) {
+  nav {
+    width: 100%;
+    max-width: 1024px;
+  }
+  .container {
+    height: 500px;
+  }
+}
