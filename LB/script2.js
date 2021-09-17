@@ -1,5 +1,5 @@
 //choose the number of pokemons
-const numberOfPokemons = 150;
+const numberOfPokemons = 9;
 
 //get the pokedex and searchbar element from DOM
 const pokedex = document.getElementById("pokedex");
@@ -35,7 +35,7 @@ const mainTypes = Object.keys(colors);
 //search bar functionality based on keyup event
 search.addEventListener("keyup", (e) => {
   //check the typed value
-  let searchStr = e.target.value;
+  let searchStr = e.target.value.toLowerCase();
   //get all pokemons
   Promise.all(pokemons).then((results) => {
     //get the filtered value
