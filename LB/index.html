@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap" rel="stylesheet"> 
+    <title>Projet Pokedex</title>
+    <style>
+
+        /* General styling */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --light-grey-bg: #f4f4f4;
+            --white: white;
+            --card-back: #f3ab6c;
+            --gradient: linear-gradient(to left,#F33638,#FB6C6C);
+            --grass: #2CDAB1;
+            --black: #222;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        img {
+            width: 100%;
+            max-width: 15rem;
+            margin: 0 auto;
+        }
+
+        .container--el {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        /*HEADLINES*/
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 40rem;
+            pointer-events: none;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--black);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            pointer-events: none;
+        }
+
+        
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            pointer-events: none;
+        }
+
+        span {
+            padding: 0.4rem 0.5rem 0.5rem 0.5rem;
+            border-radius: 2rem;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--gradient);
+            border-bottom-right-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+            box-shadow: 0 0 1rem 0.2rem #ddd9d9;
+        }
+
+        .header__wrapper {
+            padding: 10rem 0 4rem 0;
+        }
+
+        #search__bar {
+            display: block;
+            width: 100%;
+            padding: 1.3rem 1.3rem 1.5rem 1.3rem;
+            border-radius: 2rem;
+            border: none;
+        }
+
+        /*POKEDEX*/
+
+        #pokedex {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /*CARD*/
+
+        .scene {
+            perspective: 100rem;
+            width: 100%;
+            min-height: 35rem;
+        }
+
+        .card__wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+        }
+
+        .pokemonCard__front {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 2rem;
+            padding: 1.5rem;
+            box-shadow: 0 0 1rem 0.2rem #ddd9d9;
+        }
+
+        .pokemonCard__back {
+            display: grid;
+            background: var(--white);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 2rem;
+            padding: 1.5rem;
+            box-shadow: 0 0 3rem #ccc;
+            transform: rotateY(180deg);
+        }
+
+        .img__container {
+            max-width: 100%;
+            grid-row: 3/7;
+            pointer-events: none;
+        }
+
+        .stats__container {
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        @media screen and (min-width:768px) {
+        }
+
+        .fire--el  { background-color: #FB6C6C;color:var(--white) !important} 
+        .grass--el { background-color: #47CEAE;color:var(--white) !important}
+        .electric--el { background-color: #FFCE4B;color:var(--white) !important}
+        .water--el { background-color: #76BDFE;color:var(--white) !important}
+        .ground--el { background-color: #AC726A;color:var(--white) !important}
+        .rock--el { background-color: #AC726A;color:var(--white) !important}
+        .fairy--el { background-color: #fceaff;color:var(--black) !important}
+        .poison--el { background-color: #47CEAE;color:var(--white) !important}
+        .bug--el { background-color: #f8d5a3;color:var(--black) !important}
+        .dragon--el { background-color: #97b3e6;color:var(--white) !important}
+        .psychic--el { background-color: #7E528F;color:var(--white) !important}
+        .flying--el > { background-color: #F5F5F5; color:var(--black) !important}
+        .fighting--el > { background-color: #E6E0D4; color:var(--black) !important}
+        .normal--el { background-color: #E6E0D4; color:var(--black) !important}
+
+        .fairy--el h3,
+        .fairy--el p,
+        .fighting--el h3,
+        .fighting--el p,
+        .flying--el h3,
+        .flying--el p,
+        .normal--el h3, 
+        .normal--el p {
+            color: var(--black) !important;
+        }
+
+        .fire--el h3,
+        .grass--el h3,
+        .electric--el h3,
+        .water--el h3,
+        .ground--el h3,
+        .rock--el h3,
+        .poison--el h3,
+        .dragon--el h3,
+        .psychic--el h3 {
+            color: var(--white) !important;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header__wrapper container--el">
+            <h1>What pokemon are you looking for ?</h1>
+            <input type="text" id="search__bar" name="search__bar" placeholder="Search a pokemon">
+        </div>
+    </header>
+
+    <div id="pokedex" class="container--el">
+    </div>
+    
+
+
+<script src="script2.js"></script>
+</body>
+</html>
