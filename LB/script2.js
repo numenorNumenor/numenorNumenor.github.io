@@ -1,7 +1,7 @@
 //choose the number of pokemons
 const numberOfPokemons = 9;
 
-//get the pokedex and searchbar and inner--bar element from DOM
+//get the pokedex and searchbar element from DOM
 const pokedex = document.getElementById("pokedex");
 const search = document.getElementById("search__bar");
 
@@ -147,8 +147,6 @@ const displayPokemon = (pokemon) => {
     })
     .join("");
   pokedex.innerHTML = htmlString;
-  const stat = htmlString.querySelector(".inner-bar");
-  console.log(stat);
 };
 
 //changing stats
