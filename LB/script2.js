@@ -1,5 +1,5 @@
 //choose the number of pokemons
-const numberOfPokemons = 150;
+const numberOfPokemons = 9;
 
 //get the pokedex and searchbar and inner--bar element from DOM
 const pokedex = document.getElementById("pokedex");
