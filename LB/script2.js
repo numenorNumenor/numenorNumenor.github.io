@@ -1,7 +1,7 @@
 //choose the number of pokemons
-const numberOfPokemons = 9;
+const numberOfPokemons = 150;
 
-//get the pokedex and searchbar element from DOM
+//get the pokedex and searchbar and inner--bar element from DOM
 const pokedex = document.getElementById("pokedex");
 const search = document.getElementById("search__bar");
 
@@ -108,30 +108,38 @@ const displayPokemon = (pokemon) => {
     <div class="scene">
         <div class="card__wrapper">
             <div class="pokemonCard__front ${classEl}--el">
+                <div class="head__container">
+                  <p class="number--el">#${id.toString().padStart(3, "0")}</p>
+                  <h3>${name}</h3>
 
-                <p class="number--el">#${id.toString().padStart(3, "0")}</p>
-                <h3>${name}</h3>
-
-                <div class="img__container">
-                <img src="${img}"></img>
+                  <div class="img__container">
+                  <img src="${img}"></img>
+                  </div>
+                </div>
+                <div class="body__container">
+                  <h4>Base stats</h4>
+                  <div class="stats__container">
+                    <div class="stat"><p>HP:</p> <span>${hp}</span> <div class="bar"><div class="inner--bar health--modifier" style="width:${
+        hp / 2
+      }%"></div></div></div>
+                    <div class="stat"><p>Attack:</p> <span>${attack}</span> <div class="bar"><div class="inner--bar" style="width:${
+        attack / 2
+      }%"></div></div></div>
+                    <div class="stat"><p>Defence:</p> <span>${defense}</span> <div class="bar"><div class="inner--bar" style="width:${
+        defense / 2
+      }%"></div></div></div>
+                    <div class="stat"><p>Special Attack:</p> <span>${specialAttack}</span> <div class="bar"><div class="inner--bar" style="width:${
+        specialAttack / 2
+      }%"></div></div></div>
+                    <div class="stat"><p>Special Defense:</p> <span>${specialDefense}</span> <div class="bar"><div class="inner--bar" style="width:${
+        specialDefense / 2
+      }%"></div></div></div>
+                    <div class="stat"><p>Speed:</p> <span>${speed}</span> <div class="bar"><div class="inner--bar" style="width:${
+        speed / 2
+      }%"></div></div></div>
+                  </div>
                 </div>
 
-            </div>
-
-            <div class="pokemonCard__back">
-              <p>${name}</p>
-              <h3>Pokemon stats : </h3>
-              <p>HP: ${hp}</p>
-              <p>type: ${type}</p>
-              <div class="stats__container">
-                <p>Attack: ${attack}</p>
-                <p>Defence: ${defense}</p>
-              </div>
-              <div class="stats__container">
-              <p>Special Attack: ${specialAttack}</p>
-              <p>Special Defense: ${specialDefense}</p>
-              </div>
-              <p>Speed: ${speed}</p>
             </div>
         </div>
     </div>
@@ -139,14 +147,13 @@ const displayPokemon = (pokemon) => {
     })
     .join("");
   pokedex.innerHTML = htmlString;
+  const stat = htmlString.querySelector(".inner-bar");
+  console.log(stat);
 };
 
-//flipping card function
+//changing stats
 
-pokedex.addEventListener("click", (e) => {
-  if (e.target.classList.contains("pokemonCard__front")) {
-    e.target.parentElement.style.transform = "rotateY(180deg)";
-  } else {
-    e.target.parentElement.style.transform = "rotateY(0deg)";
-  }
+window.addEventListener("DOMContentLoaded", (event) => {
+  const stat = document.querySelectorAll(".inner--bar");
+  console.log(stat);
 });
