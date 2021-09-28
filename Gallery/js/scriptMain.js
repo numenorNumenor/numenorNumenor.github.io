@@ -74,7 +74,10 @@ section.addEventListener("click", (e) => {
 });
 
 function displayPainting(slides, index) {
+  wrapper.classList.add("slide");
+  wrapper.setAttribute("data-slide", `${index}`);
   const smallHero = slides[index].images.hero.small;
+  const largeHero = slides[index].images.hero.large;
   const name = slides[index].name;
   const author = slides[index].artist.name;
   const authorImg = slides[index].artist.image;
@@ -86,7 +89,8 @@ function displayPainting(slides, index) {
   controlPainting.innerText = name;
   controlAuthor.innerText = author;
 
-  wrapper.innerHTML = `
+  if (window.screen.width < 768) {
+    wrapper.innerHTML = `
     
     <div class="img__container">
     <img id="img__small" src="${smallHero}" alt="">
@@ -107,13 +111,39 @@ function displayPainting(slides, index) {
 
     </section> <!-- end of section -->
   `;
-}
+  }
 
+  if (window.screen.width >= 768) {
+    wrapper.innerHTML = `
+    
+    <div class="img__container">
+    <img id="img__small" src="${largeHero}" alt="">
+    <div class="img__desc">
+        <h3>${name}</h3>
+        <h5>${author}</h5>
+    </div>
+    <div style="background-image: url('${authorImg}');" class="img__author"></div>
+    </div>
+    <div class="about__container">
+    <div class="year--tag">${year}</div>
+    <p class="painting__desc">
+        ${description}
+    </p>
+    </div>
+
+    <a href="${source}" class="source__link" target="_blank">Go to source</a>
+
+    </section> <!-- end of section -->
+  `;
+  }
+}
+//when clicking on slideshow button prevent opening the link
 slideshow.addEventListener("click", (e) => {
   body.classList.add("slides");
   e.preventDefault();
   const targetAttr = 0;
   displayPainting(slides, targetAttr);
+  progressBarAnimation(slides, targetAttr);
 });
 
 // Left , Right Arrow functionality

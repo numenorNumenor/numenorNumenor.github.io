@@ -1,10 +1,146 @@
 @media screen and (min-width: 768px) {
+  body {
+    padding-top: var(--gap);
+    padding-bottom: var(--gap);
+  }
+
+  nav {
+    padding-bottom: var(--gap);
+  }
+
+  a.start__slideshow {
+    font-size: 1rem;
+  }
+
+  .arrow {
+    max-width: 2.4rem;
+  }
+
+  .arrow:nth-of-type(1) {
+    margin-right: 4rem;
+  }
+
+  .img__container h3 {
+    font-size: 5.6rem;
+    line-height: 6.4rem;
+    max-width: 100%;
+  }
+
+  footer h6 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .p__author {
+    font-size: 1.3rem;
+  }
+
+  img {
+    max-width: 47.5rem;
+  }
+
+  .img__desc {
+    max-width: 44.5rem;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
+    transform: translateY(0);
+    justify-content: flex-start;
+    min-height: 23.8rem;
+    padding-bottom: 6rem;
+  }
+
+  .img__author {
+    top: 23.8rem;
+    left: calc(47.5rem + var(--gap));
+    right: auto;
+    bottom: auto;
+    width: 12.8rem;
+    height: 12.8rem;
+  }
+
+  .year--tag {
+    font-size: 20rem;
+    right: auto;
+    left: 0;
+    top: 0;
+  }
+
+  .about__container p {
+    max-width: 58rem;
+    padding-left: 11rem;
+  }
+
   .content__wrapper {
     display: block;
     column-count: 2;
   }
 
-  .content__wrapper.fade-slide {
+  .content__wrapper.slide {
     column-count: 1;
+  }
+
+  /*SLIDE 1*/
+  [data-slide="0"] h3 {
+    max-width: 19rem;
+  }
+  /*SLIDE 2*/
+  [data-slide="1"] h3 {
+    max-width: 28rem;
+  }
+
+  [data-slide="1"] .img__author {
+    top: 28.5667rem;
+  }
+  /*SLIDE 3*/
+  [data-slide="2"] .img__desc {
+    min-height: 17.4rem;
+  }
+
+  [data-slide="2"] .img__author {
+    top: 17.4rem;
+  }
+  /*SLIDE 5*/
+
+  [data-slide="4"] h3 {
+    max-width: 32rem;
+  }
+
+  [data-slide="4"] .img__author {
+    top: 28.5667rem;
+  }
+  /*SLIDE 6*/
+
+  [data-slide="5"] .img__author {
+    top: 28.5667rem;
+  }
+  /*SLIDE 8*/
+
+  [data-slide="7"] h3 {
+    max-width: 32rem;
+  }
+
+  [data-slide="7"] .img__author {
+    top: 28.5667rem;
+  }
+  /*SLIDE 11*/
+
+  [data-slide="10"] h3 {
+    max-width: 33rem;
+  }
+  /*SLIDE 14*/
+
+  [data-slide="13"] h3 {
+    max-width: 22rem;
+  }
+  /*SLIDE 15*/
+
+  [data-slide="14"] .img__desc {
+    min-height: 17.4rem;
+  }
+
+  [data-slide="14"] .img__author {
+    top: 17.4rem;
   }
 }
