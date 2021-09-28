@@ -67,6 +67,10 @@
     top: 0;
   }
 
+  .about__container {
+    padding-top: 10rem;
+  }
+
   .about__container p {
     max-width: 58rem;
     padding-left: 11rem;
