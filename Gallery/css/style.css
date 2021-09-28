@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #000000;
+  --grey: #7d7d7d;
+  --light-grey: #e5e5e5;
+  --very-light-grey: #f3f3f3;
+  --white: #ffffff;
+  --font-family: "Libre Baskerville", serif;
+  --gap: 3rem;
+}
+
+/*General styling*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  padding: 1.7rem 0 1.5rem 0;
+}
+
+/*img*/
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.arrow {
+  max-width: 1.6rem;
+  height: auto;
+}
+
+.arrow:nth-of-type(1) {
+  margin-right: 2rem;
+}
+
+.logo--el {
+  max-width: 11.5rem;
+}
+
+/*h3-h5*/
+
+.slide__desc h5 {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.slide__desc h3 {
+  font-size: 2.4rem;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+  max-width: 24rem;
+}
+
+.slide__desc h3,
+.slide__desc h5 {
+  text-transform: capitalize;
+  pointer-events: none;
+}
+
+.img__container h3 {
+  font-size: 2.4rem;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+  max-width: 22rem;
+  line-height: 3.5rem;
+}
+
+.img__container h5 {
+  font-size: 1.5rem;
+  color: var(--grey);
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+/*h6*/
+
+footer h6 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/*p*/
+
+.about__container p {
+  font-size: 1.4rem;
+  color: var(--grey);
+  line-height: 2.8rem;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/*a*/
+
+.source__link {
+  letter-spacing: 0.2rem;
+  text-decoration: underline;
+  margin: 5rem 0;
+}
+
+.start__slideshow {
+  letter-spacing: 0.2rem;
+}
+
+/*li*/
+
+li {
+  list-style-type: none;
+}
+
+/*Modifier classes*/
+
+.container--el {
+  width: 100%;
+  max-width: 136rem;
+  margin: 0 auto;
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+}
+
+.fade {
+  animation-name: opacity;
+  animation-duration: 3s;
+}
+
+.fade-slide {
+  animation-name: slide-opacity;
+  animation-duration: 3s;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*NAV*/
+
+nav {
+  border-bottom: 0.1rem solid var(--light-grey);
+  padding-bottom: 1.5rem;
+}
+
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*SECTION*/
+
+.content__wrapper {
+  gap: var(--gap);
+  padding: var(--gap) 0 0 0;
+  overflow: hidden;
+}
+
+.content__wrapper > * {
+  display: block;
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.content__wrapper:not(.fade-slide) > *:hover {
+  opacity: 0.8;
+}
+
+.slide__wrapper {
+  position: relative;
+}
+
+.slide__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 3.2rem;
+  padding-left: 3.2rem;
+}
+
+/*SLIDE SECTION*/
+
+/*img container*/
+
+.img__container {
+  position: relative;
+}
+
+.img__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  min-height: 16rem;
+  transform: translateY(8rem);
+  background: var(--white);
+}
+
+.img__author {
+  position: absolute;
+  bottom: -14.3rem;
+  left: 1.5rem;
+  width: 6.4rem;
+  height: 6.4rem;
+  background-size: cover;
+}
+
+/*description container*/
+
+.about__container {
+  position: relative;
+  padding-top: 15rem;
+}
+
+.year--tag {
+  font-weight: bold;
+  position: absolute;
+  font-size: 10rem;
+  top: 6.5rem;
+  right: 0;
+  color: rgba(0, 0, 0, 0.05);
+}
+
+/*FOOTER*/
+
+footer {
+  display: none;
+  padding-top: var(--gap);
+  position: relative;
+  margin-bottom: 0 !important;
+  padding-bottom: 0;
+}
+
+body.slides footer {
+  display: block;
+}
+
+.progress__value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7.142857142857143%;
+  height: 0.2rem;
+  background: var(--black);
+  transition: width 0.5s ease;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 136rem;
+  margin: 0 auto;
+}
+
+.controls__container {
+  display: flex;
+  align-self: center;
+}

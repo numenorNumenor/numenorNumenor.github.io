@@ -1,0 +1,61 @@
+/*SECTION*/
+
+.about__container {
+  position: relative;
+  padding-top: 15rem;
+}
+
+.year {
+  font-weight: bold;
+  position: absolute;
+  font-size: 10rem;
+  top: 6.5rem;
+  right: 0;
+  color: rgba(0, 0, 0, 0.05);
+}
+
+.img__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: -5.02rem;
+  width: 90%;
+  height: 10.4rem;
+  padding: 1.5rem;
+  background: var(--white);
+}
+
+footer {
+  padding-top: 2rem;
+  position: relative;
+}
+
+.progress__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background: var(--very-light-grey);
+}
+
+.progress__value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7.142857142857143%;
+  height: 0.2rem;
+  background: var(--black);
+  transition: width 0.5s ease;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls__container {
+  display: flex;
+  align-self: center;
+}

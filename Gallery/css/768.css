@@ -1,0 +1,10 @@
+@media screen and (min-width: 768px) {
+  .content__wrapper {
+    display: block;
+    column-count: 2;
+  }
+
+  .content__wrapper.fade-slide {
+    column-count: 1;
+  }
+}
