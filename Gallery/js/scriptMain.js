@@ -178,27 +178,9 @@ slideshow.addEventListener("click", (e) => {
 // when clicked on icon
 
 left.addEventListener("click", () => {
-  index--;
-  if (index < 0) {
-    index = slides.length - 1;
-  }
-  displayPainting(slides, index);
-  progressBarAnimation(slides, index);
-});
-
-right.addEventListener("click", () => {
-  index++;
-  if (index > slides.length - 1) {
-    index = 0;
-  }
-  displayPainting(slides, index);
-  progressBarAnimation(slides, index);
-});
-
-//when clicked the keyboard key
-
-window.addEventListener("keydown", (event) => {
-  if (event.keyCode === 37) {
+  if (slideshow.innerText === "STOP SLIDESHOW") {
+    return false;
+  } else {
     index--;
     if (index < 0) {
       index = slides.length - 1;
@@ -206,14 +188,47 @@ window.addEventListener("keydown", (event) => {
     displayPainting(slides, index);
     progressBarAnimation(slides, index);
   }
+});
 
-  if (event.keyCode === 39) {
+right.addEventListener("click", () => {
+  if (slideshow.innerText === "STOP SLIDESHOW") {
+    return false;
+  } else {
     index++;
     if (index > slides.length - 1) {
       index = 0;
     }
     displayPainting(slides, index);
     progressBarAnimation(slides, index);
+  }
+});
+
+//when clicked the keyboard key
+
+window.addEventListener("keydown", (event) => {
+  if (slideshow.innerText === "STOP SLIDESHOW") {
+    return false;
+  } else {
+    if (event.keyCode === 37) {
+      index--;
+      if (index < 0) {
+        index = slides.length - 1;
+      }
+      displayPainting(slides, index);
+      progressBarAnimation(slides, index);
+    }
+  }
+  if (slideshow.innerText === "STOP SLIDESHOW") {
+    return false;
+  } else {
+    if (event.keyCode === 39) {
+      index++;
+      if (index > slides.length - 1) {
+        index = 0;
+      }
+      displayPainting(slides, index);
+      progressBarAnimation(slides, index);
+    }
   }
 });
 
