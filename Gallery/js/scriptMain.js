@@ -146,30 +146,30 @@ slideshow.addEventListener("click", (e) => {
   slideshow.innerText = "STOP SLIDESHOW";
   // if you click the link from within the slide go on with the slideshow from there
   if (body.classList.contains("slides")) {
-    const targetAttr = wrapper.getAttribute("data-slide");
+    index = wrapper.getAttribute("data-slide");
 
     if (isPlaying === false) {
       isPlaying = true;
-      progressBarAnimation(slides, targetAttr);
-      slideShowAnimation(slides, targetAttr, true);
+      progressBarAnimation(slides, index);
+      slideShowAnimation(slides, index, true);
     } else {
       slideshow.innerText = "START SLIDESHOW";
       isPlaying = false;
-      slideShowAnimation(slides, targetAttr, false);
+      slideShowAnimation(slides, index, false);
     }
     //if you click the link from the initial page start the slideshow from the first slide
   } else {
-    const targetAttr = -1;
+    index = -1;
     body.classList.add("slides");
 
     if (isPlaying === false) {
       isPlaying = true;
-      progressBarAnimation(slides, targetAttr);
-      slideShowAnimation(slides, targetAttr, true);
+      progressBarAnimation(slides, index);
+      slideShowAnimation(slides, index, true);
     } else {
       slideshow.innerText = "START SLIDESHOW";
       isPlaying = false;
-      slideShowAnimation(slides, targetAttr, false);
+      slideShowAnimation(slides, index, false);
     }
   }
 });

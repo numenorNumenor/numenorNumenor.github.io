@@ -1,10 +1,5 @@
 @media screen and (min-width: 768px) {
-  body {
-    padding-top: var(--gap);
-    padding-bottom: var(--gap);
-  }
-
-  nav {
+  body:not(.slides) {
     padding-bottom: var(--gap);
   }
 
@@ -35,7 +30,7 @@
     font-size: 1.3rem;
   }
 
-  img {
+  .content__wrapper.slide img {
     max-width: 47.5rem;
   }
 
@@ -82,6 +77,8 @@
 
   .content__wrapper.slide {
     column-count: 1;
+    margin-bottom: 0;
+    place-self: center;
   }
 
   .desc__wrapper {

@@ -21,9 +21,10 @@ html {
 }
 
 body {
+  display: grid;
+  height: 100%;
   flex-direction: column;
   font-family: var(--font-family);
-  padding: 1.7rem 0 1.5rem 0;
 }
 
 /*img*/
@@ -112,7 +113,6 @@ footer p {
 .source__link {
   letter-spacing: 0.2rem;
   text-decoration: underline;
-  margin: 5rem 0;
 }
 
 .start__slideshow {
@@ -166,8 +166,10 @@ li {
 /*NAV*/
 
 nav {
+  place-self: top auto;
   border-bottom: 0.1rem solid var(--light-grey);
-  padding-bottom: 1.5rem;
+  padding: var(--gap) 0;
+  max-height: 9.58rem;
 }
 
 .nav__wrapper {
@@ -208,7 +210,7 @@ nav {
   height: 100%;
   bottom: 0;
   left: 0;
-  padding-bottom: 3.2rem;
+  padding-bottom: 03.2rem;
   padding-left: 3.2rem;
 }
 
@@ -248,7 +250,6 @@ nav {
 .about__container {
   position: relative;
   padding-top: 15rem;
-  padding-bottom: 5rem;
 }
 
 .year--tag {
@@ -263,11 +264,12 @@ nav {
 /*FOOTER*/
 
 footer {
+  place-self: end auto;
   display: none;
-  padding-top: var(--gap);
   position: relative;
   margin-bottom: 0 !important;
-  padding-bottom: 0;
+  padding-top: var(--gap);
+  padding-bottom: var(--gap);
 }
 
 body.slides footer {

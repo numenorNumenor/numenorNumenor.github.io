@@ -1,4 +1,7 @@
 @media screen and (min-width: 1145px) {
+  html {
+    font-size: 62.5%;
+  }
   .content__wrapper {
     column-count: 3;
   }
@@ -6,7 +9,7 @@
   .content__wrapper.slide {
     display: flex;
     column-count: 1;
-    margin-bottom: 5rem;
+    padding-bottom: var(--gap);
   }
 
   .content__wrapper.slide .img__container,
@@ -31,5 +34,15 @@
   [data-slide="14"] .img__author {
     top: auto;
     bottom: 0.25rem;
+  }
+
+  .img__container {
+    margin-bottom: 0;
+  }
+
+  body.slides section {
+    display: grid;
+    padding-bottom: 0;
+    align-items: center;
   }
 }
