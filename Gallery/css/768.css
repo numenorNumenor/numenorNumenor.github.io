@@ -73,7 +73,6 @@
 
   .about__container p {
     max-width: 58rem;
-    padding-left: 11rem;
   }
 
   .content__wrapper {
@@ -83,6 +82,10 @@
 
   .content__wrapper.slide {
     column-count: 1;
+  }
+
+  .desc__wrapper {
+    padding-left: 11rem;
   }
 
   /*SLIDE 1*/

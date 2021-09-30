@@ -1,0 +1,8 @@
+@media screen and (min-width: 1360px) {
+  html {
+    font-size: 66%;
+  }
+  .content__wrapper {
+    column-count: 4;
+  }
+}

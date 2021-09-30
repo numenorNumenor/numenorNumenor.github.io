@@ -1,0 +1,35 @@
+@media screen and (min-width: 1145px) {
+  .content__wrapper {
+    column-count: 3;
+  }
+
+  .content__wrapper.slide {
+    display: flex;
+    column-count: 1;
+    margin-bottom: 5rem;
+  }
+
+  .content__wrapper.slide .img__container,
+  .content__wrapper.slide .about__container {
+    width: 50%;
+  }
+
+  [data-slide="0"] .img__author,
+  [data-slide="1"] .img__author,
+  [data-slide="2"] .img__author,
+  [data-slide="3"] .img__author,
+  [data-slide="4"] .img__author,
+  [data-slide="5"] .img__author,
+  [data-slide="6"] .img__author,
+  [data-slide="7"] .img__author,
+  [data-slide="8"] .img__author,
+  [data-slide="9"] .img__author,
+  [data-slide="10"] .img__author,
+  [data-slide="11"] .img__author,
+  [data-slide="12"] .img__author,
+  [data-slide="13"] .img__author,
+  [data-slide="14"] .img__author {
+    top: auto;
+    bottom: 0.25rem;
+  }
+}

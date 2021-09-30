@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  flex-direction: column;
   font-family: var(--font-family);
   padding: 1.7rem 0 1.5rem 0;
 }
@@ -99,6 +100,7 @@ footer h6 {
   font-size: 1.4rem;
   color: var(--grey);
   line-height: 2.8rem;
+  margin-bottom: 5rem;
 }
 
 footer p {
@@ -246,6 +248,7 @@ nav {
 .about__container {
   position: relative;
   padding-top: 15rem;
+  padding-bottom: 5rem;
 }
 
 .year--tag {

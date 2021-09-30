@@ -4,9 +4,9 @@ const slideshow = document.querySelector(".start__slideshow");
 const progressBar = document.querySelector(".progress__value");
 const left = document.querySelector(".arrow--left");
 const right = document.querySelector(".arrow--right");
-const startSlide = document.querySelector(".start__slideshow");
 const body = document.querySelector("body");
 
+let isPlaying = false;
 let slides = [];
 let index = 0;
 
@@ -126,24 +126,52 @@ function displayPainting(slides, index) {
     </div>
     <div class="about__container">
     <div class="year--tag">${year}</div>
-    <p class="painting__desc">
-        ${description}
-    </p>
+
+    <div class="desc__wrapper">
+      <p class="painting__desc">
+          ${description}
+      </p>
+
+      <a href="${source}" class="source__link" target="_blank">Go to source</a>
+    </div> <!-- end of desc__wrapper -->
     </div>
-
-    <a href="${source}" class="source__link" target="_blank">Go to source</a>
-
     </section> <!-- end of section -->
   `;
   }
 }
 //when clicking on slideshow button prevent opening the link
 slideshow.addEventListener("click", (e) => {
-  body.classList.add("slides");
   e.preventDefault();
-  const targetAttr = 0;
-  displayPainting(slides, targetAttr);
-  progressBarAnimation(slides, targetAttr);
+  //after clicking the btn change the text to STOP SLIDESHOW
+  slideshow.innerText = "STOP SLIDESHOW";
+  // if you click the link from within the slide go on with the slideshow from there
+  if (body.classList.contains("slides")) {
+    const targetAttr = wrapper.getAttribute("data-slide");
+
+    if (isPlaying === false) {
+      isPlaying = true;
+      progressBarAnimation(slides, targetAttr);
+      slideShowAnimation(slides, targetAttr, true);
+    } else {
+      slideshow.innerText = "START SLIDESHOW";
+      isPlaying = false;
+      slideShowAnimation(slides, targetAttr, false);
+    }
+    //if you click the link from the initial page start the slideshow from the first slide
+  } else {
+    const targetAttr = -1;
+    body.classList.add("slides");
+
+    if (isPlaying === false) {
+      isPlaying = true;
+      progressBarAnimation(slides, targetAttr);
+      slideShowAnimation(slides, targetAttr, true);
+    } else {
+      slideshow.innerText = "START SLIDESHOW";
+      isPlaying = false;
+      slideShowAnimation(slides, targetAttr, false);
+    }
+  }
 });
 
 // Left , Right Arrow functionality
@@ -152,7 +180,7 @@ slideshow.addEventListener("click", (e) => {
 left.addEventListener("click", () => {
   index--;
   if (index < 0) {
-    index = 14;
+    index = slides.length - 1;
   }
   displayPainting(slides, index);
   progressBarAnimation(slides, index);
@@ -160,7 +188,7 @@ left.addEventListener("click", () => {
 
 right.addEventListener("click", () => {
   index++;
-  if (index > 14) {
+  if (index > slides.length - 1) {
     index = 0;
   }
   displayPainting(slides, index);
@@ -173,7 +201,7 @@ window.addEventListener("keydown", (event) => {
   if (event.keyCode === 37) {
     index--;
     if (index < 0) {
-      index = 14;
+      index = slides.length - 1;
     }
     displayPainting(slides, index);
     progressBarAnimation(slides, index);
@@ -181,7 +209,7 @@ window.addEventListener("keydown", (event) => {
 
   if (event.keyCode === 39) {
     index++;
-    if (index > 14) {
+    if (index > slides.length - 1) {
       index = 0;
     }
     displayPainting(slides, index);
@@ -195,3 +223,25 @@ function progressBarAnimation(slides, index) {
   const currentWidth = 100 / slides.length;
   progressBar.style.width = currentWidth * index + "%";
 }
+//Slides show functionality
+const slideShowAnimation = (slides, index, boolean) => {
+  this.index = index;
+  this.state = boolean;
+  this.interval;
+  this.currentIndex;
+
+  if (this.state === true) {
+    this.interval = setInterval(() => {
+      this.index++;
+      this.currentIndex = this.index;
+      if (this.index > slides.length - 1) {
+        this.index = 0;
+      }
+      displayPainting(slides, this.index);
+      progressBarAnimation(slides, this.index);
+    }, 2000);
+  } else {
+    clearInterval(this.interval);
+    displayPainting(slides, this.currentIndex);
+  }
+};
