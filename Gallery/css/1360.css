@@ -1,6 +1,5 @@
 @media screen and (min-width: 1360px) {
   .content__wrapper.slide {
-    padding-top: 0;
     margin-bottom: 0;
     place-self: center;
   }
